@@ -1,0 +1,32 @@
+{
+  "CallerReference": "smarttask-prod",
+  "Comment": "smarttask-prod",
+  "Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "smarttask-prod-origin",
+        "DomainName": "smarttask-prod.s3.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "smarttask-prod-origin",
+    "ViewerProtocolPolicy": "allow-all",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    },
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {
+        "Forward": "none"
+      }
+    },
+    "MinTTL": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "CallerReference": "smart-task-frontend-20261008",
+  "Comment": "Smart Task Management Frontend",
+  "Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "smart-task-s3",
+        "DomainName": "smart-task-frontend.s3.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "smart-task-s3",
+    "ViewerProtocolPolicy": "allow-all",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": [
+        "GET",
+        "HEAD"
+      ],
+      "CachedMethods": {
+        "Quantity": 2,
+        "Items": [
+          "GET",
+          "HEAD"
+        ]
+      }
+    },
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {
+        "Forward": "none"
+      }
+    },
+    "MinTTL": 0
+  }
+}
